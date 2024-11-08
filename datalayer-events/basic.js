@@ -16,3 +16,11 @@ dataLayer.push({
   lead_type: "test lead",
   value: 5
 };
+
+
+function dl_test_iframe_event() {
+dataLayer.push({
+  event: "test_iframe_event",
+  test_variable: "test iframe value",
+  test_variable: "test iframe value"
+};
