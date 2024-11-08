@@ -8,9 +8,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <head>
 
 
-
-
-
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=ProgId content=Word.Document>
 <meta name=Generator content="Microsoft Word 15">
@@ -1199,8 +1196,8 @@ class=SpellE>iframe</span>?<o:p></o:p></span></h1>
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>An <span
 class=SpellE>iframe</span>, or inline frame, is an HTML element that allows you
 to embed another HTML document within a webpage. It is often used for forms and
-can be checked by right clicking on the form and finding the ‘view frame
-source’ option. If this option doesn’t appear, then it isn’t an <span
+can be checked by right clicking on the form and finding the 'view frame
+source' option. If this option doesn't appear, then it isn't an <span
 class=SpellE>iframe</span>. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
@@ -1237,15 +1234,15 @@ style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>An <span
 class=SpellE>iframe</span> is basically a page within a page, and these two
-pages are completely independent. That means a GTM firing on the ‘main’ page
-can’t access the events within the <span class=SpellE>iframe</span>, and
+pages are completely independent. That means a GTM firing on the 'main' page
+can't access the events within the <span class=SpellE>iframe</span>, and
 vice-versa.<o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>One
 important step is to check the domain of the <span class=SpellE>iframe</span>
-by clicking on ‘View frame source’. If the <span class=SpellE>iframe</span>
+by clicking on 'View frame source'. If the <span class=SpellE>iframe</span>
 shares the domain of the main page then the implementation is simpler, if it
-doesn’t then it is more complex.<o:p></o:p></span></p>
+doesn't then it is more complex.<o:p></o:p></span></p>
 
 <h1><span lang=EN-US style='mso-ansi-language:EN-US'>Same Domain Implementation<o:p></o:p></span></h1>
 
@@ -1285,14 +1282,14 @@ Implementation<o:p></o:p></span></h1>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>If the
 domain of the <span class=SpellE>iframe</span> is different from the main
-domain, then cookies aren’t shared between the two pages. Even if GTM is
-implemented, the tags inside the <span class=SpellE>iframe</span> don’t have
+domain, then cookies aren't shared between the two pages. Even if GTM is
+implemented, the tags inside the <span class=SpellE>iframe</span> don't have
 access to the analytics and advertising first party cookies, which means tags
-won’t know it’s the same user and attribution will break. <o:p></o:p></span></p>
+won't know it's the same user and attribution will break. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>It is
 possible to let <span class=SpellE>iframes</span> communicate with the main
-page using the <span class=SpellE>javascript</span> method ‘<span class=SpellE>postMessage</span>’
+page using the <span class=SpellE>javascript</span> method '<span class=SpellE>postMessage</span>'
 (</span><a
 href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage"><span
 lang=EN-US style='mso-ansi-language:EN-US'>https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</span></a><span
@@ -1324,32 +1321,32 @@ EN-US'>function <span class=SpellE>sendDataIframe</span>(<span class=SpellE>even
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span>try {<o:p></o:p></span></p>
+EN-US'><span style='mso-spacerun:yes'>    </span>try {<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>var <span class=SpellE>postObject</span>
+EN-US'><span style='mso-spacerun:yes'>        </span>var <span class=SpellE>postObject</span>
 = <span class=SpellE>JSON.stringify</span>(<span class=SpellE>eventData</span><span
 class=GramE>);</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span><span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>        </span><span class=SpellE><span
 class=GramE>parent.postMessage</span></span>(<span class=SpellE>postObject</span>,
 '<span style='background:yellow;mso-highlight:yellow'>https://www.dominioprincipal.pt/</span>');<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span>} catch (e) {<o:p></o:p></span></p>
+EN-US'><span style='mso-spacerun:yes'>    </span>} catch (e) {<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span><span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>        </span><span class=SpellE><span
 class=GramE>window.console</span></span> &amp;&amp; window.console.log(e);<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
+EN-US'><span style='mso-spacerun:yes'>    </span>}<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
@@ -1368,12 +1365,12 @@ font-family:"Courier New";mso-ansi-language:EN-US'>{<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span><span style='background:yellow;
+EN-US'><span style='mso-spacerun:yes'>    </span><span style='background:yellow;
 mso-highlight:yellow'>event: '<span class=SpellE>iframeEvent</span>',</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span><span style='background:yellow;
+EN-US'><span style='mso-spacerun:yes'>    </span><span style='background:yellow;
 mso-highlight:yellow'>variable1: '<span class=SpellE>iframeVariable</span>'</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
@@ -1416,7 +1413,7 @@ EN-US'>try {<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span><span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>    </span><span class=SpellE><span
 class=GramE>window.addEventListener</span></span>(&quot;message&quot;,
 function(message) {<o:p></o:p></span></p>
 
@@ -1426,13 +1423,13 @@ EN-US'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE><span
 class=GramE>event.origin</span></span> !== &quot;<span style='background:yellow;
 mso-highlight:yellow'>https://www.dominiodoiframe.pt/</span>&quot;) return;<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE>message.<span
+EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE>message.<span
 class=GramE>data</span></span><span class=GramE> !</span>= null &amp;&amp; <span
 class=SpellE>typeof</span> <span class=SpellE>message.data</span> == 'object')
 return;<o:p></o:p></span></p>
@@ -1443,12 +1440,12 @@ EN-US'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>//<span class=GramE>console.log(</span>&quot;event
+EN-US'><span style='mso-spacerun:yes'>        </span>//<span class=GramE>console.log(</span>&quot;event
 received!&quot;);<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>var data = <span
+EN-US'><span style='mso-spacerun:yes'>        </span>var data = <span
 class=SpellE>JSON.parse</span>(<span class=SpellE>message.data</span><span
 class=GramE>);</span><o:p></o:p></span></p>
 
@@ -1458,27 +1455,27 @@ EN-US'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>var <span class=SpellE>dataLayer</span>
+EN-US'><span style='mso-spacerun:yes'>        </span>var <span class=SpellE>dataLayer</span>
 = <span class=SpellE><span class=GramE>window.dataLayer</span></span> || (<span
 class=SpellE>window.dataLayer</span> = []);<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>        </span>if (<span class=SpellE><span
 class=GramE>data.event</span></span>) {<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>            </span><span class=SpellE>dataLayer.push</span>(data<span
+EN-US'><span style='mso-spacerun:yes'>            </span><span class=SpellE>dataLayer.push</span>(data<span
 class=GramE>);</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></p>
+EN-US'><span style='mso-spacerun:yes'>        </span>}<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span>});<o:p></o:p></span></p>
+EN-US'><span style='mso-spacerun:yes'>    </span>});<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
@@ -1486,7 +1483,7 @@ EN-US'>} catch (e) {<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
 lang=EN-US style='font-size:9.0pt;font-family:"Courier New";mso-ansi-language:
-EN-US'><span style='mso-spacerun:yes'>    </span><span class=SpellE><span
+EN-US'><span style='mso-spacerun:yes'>    </span><span class=SpellE><span
 class=GramE>window.console</span></span> &amp;&amp; window.console.log(e);<o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
@@ -1505,16 +1502,18 @@ EN-US'><o:p>&nbsp;</o:p></span></p>
 class=SpellE>javascript</span> to the <span class=SpellE>iframe</span><o:p></o:p></span></h1>
 
 <p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>If the
-client can’t add GTM or <span class=SpellE>javascript</span> to the <span
-class=SpellE>iframe</span>, then we can’t measure any events.<o:p></o:p></span></p>
+client can't add GTM or <span class=SpellE>javascript</span> to the <span
+class=SpellE>iframe</span>, then we can't measure any events.<o:p></o:p></span></p>
 
 </div>
 
-<br /><br /><br /><h2>Iframe Event Test</h2>
-<p>In this page there is a Consent Manager implemented (CookieYes).<br />
+
+<br /><h2>Iframe Event Test</h2>
+<p>The button below is inside this iframe. You can use it to test events.<br />
 <ul class="actions">
 	<li><button class="button" onclick="dl_test_iframe_event()">test_iframe_event</button></li>
 </ul>
+
 
 </body>
 
