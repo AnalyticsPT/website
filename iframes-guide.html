@@ -391,18 +391,15 @@
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
-					<h2>Consent Test</h2>
-					<p>In this page there is a Consent Manager implemented (CookieYes).<br />
-					There are also 3 buttons you can use to test datalayer events.<br /><br />
-					1. Block all analytics and media tags to fire according to the consent given.<br />
-					2. Implement the basic implementation of consent mode.<br />
-					3. Implement the advanced implementation of consent mode.<br />
-					4. Set URL passthrough as granted and ads data redaction as denied.<br /><br />
-					To reset cookies, open devtools and go to Application > Storage and click on 'Clear site data' (don't include third party cookies).<br />
-					To check if consent mode is implemented on the page, paste the following code in the console: google_tag_data.ics.entries<br /><br />
-					Helpful Links:<br />
-					<a href="https://app.cookieyes.com/dashboard">Cookie Yes Dashboard</a>(use analytics email to login)<br />
-					You can also find more guides on the 2.2.8 folder.
+					<h2>Iframe Guide</h2>
+					<p style="text-align: left;padding-right: 30px;padding-left: 80px;">An iframe, or inline frame, is an HTML element that allows you to embed another HTML document within a webpage.<br />
+It is basically a page within a page, and these two pages are completely independent. That means a GTM firing on the ‘main’ page can’t access the events within the iframe, and vice-versa.<br /><br />
+Below is a guide for measuring iframes, inside an iframe with GTM already implemented. Read the guide and complete the following tasks:<br />
+1. Test previewing this page and the iframe using GTM. How many pages does it load? How many page_view events are firing?<br />
+2. Implement an event on the test_iframe_event at the end of the page.<br />
+Notice that the page_views and events inside the iframe aren't sending consent information, since it doesn't have the CMP implemented. This is a common problem with iframes.<br />
+3. Send the test_iframe_event from the iframe to the main page using the javascript codes, where the events can fire with all consent information.<br />
+<br />
 					
 					</p>
 				</div>
